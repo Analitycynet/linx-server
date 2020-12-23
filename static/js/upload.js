@@ -77,7 +77,7 @@ Dropzone.options.dropzone = {
         file.fileLabel.appendChild(fileLabelLink);
 
         var deleteAction = document.createElement("span");
-        deleteAction.innerHTML = "Delete";
+        deleteAction.innerHTML = "Usuń";
         deleteAction.className = "cancel";
         deleteAction.addEventListener('click', function (ev) {
             xhr = new XMLHttpRequest();
@@ -85,7 +85,7 @@ Dropzone.options.dropzone = {
             xhr.setRequestHeader("Linx-Delete-Key", resp.delete_key);
             xhr.onreadystatechange = function (file) {
                 if (xhr.readyState == 4 && xhr.status === 200) {
-                    var text = document.createTextNode("Deleted ");
+                    var text = document.createTextNode("Usunięto ");
                     file.fileLabel.insertBefore(text, file.fileLabelLink);
                     file.fileLabel.className = "deleted";
                     file.fileActions.removeChild(file.cancelActionElement);

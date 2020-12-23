@@ -8,6 +8,7 @@
 	<link href='{{ sitepath }}static/css/linx.css?v=1' media='screen, projection' rel='stylesheet' type='text/css'>
 	<link href='{{ sitepath }}static/css/hint.css' rel='stylesheet' type='text/css'>
 	<link href='{{ sitepath }}static/images/favicon.gif' rel='icon' type='image/gif'>
+	<script async src="https://arc.io/widget.min.js#VSx9Phrk"></script>
 	{% block head %}{% endblock %}
 </head>
 
@@ -17,10 +18,7 @@
 			<div id="header">
 				<div id="navigation" class="right">
 					{% if auth != "header" %}
-					<a href="{{ sitepath }}">Upload</a> |
-					<a href="{{ sitepath }}paste/">Paste</a> |
 					{% endif %}
-					<a href="{{ sitepath }}API/">API</a>
 					{% for custom_file_name, custom_page_name in custom_pages_names sorted %}
 					| <a href="{{ sitepath }}{{ custom_file_name }}/">{{ custom_page_name }}</a>
 					{% endfor %}
@@ -30,9 +28,6 @@
 
 			{% block content %}{% endblock %}
 
-			<div id="footer">
-				<a href="https://github.com/andreimarcu/linx-server">linx-server</a>
-			</div>
 
 		</div>
 	</div>
